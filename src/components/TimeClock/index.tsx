@@ -37,8 +37,13 @@ export default function TimeClock() {
 
 
     // Atualizar o valor do input com as horas e minutos corrigidos
-    event.target.value = `${firtCharacter}${secondCharacter}${thirdCharacter}${fourthCharacter}`;
-    setSelectHourBegin(event.target.value);
+    const newValue = `${firtCharacter}${secondCharacter}${thirdCharacter}${fourthCharacter}`;
+    setSelectHourBegin(newValue);
+
+    if (newValue === ':') {
+      setSelectHourBegin('');
+      return;
+    }
   }
 
 
